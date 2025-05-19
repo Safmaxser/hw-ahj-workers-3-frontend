@@ -1,18 +1,19 @@
 import Newsletter from "../components/newsletter/newsletter";
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js", { scope: "./" })
+      .then((reg) => {
+        console.log("Registration succeeded. Scope is " + reg.scope);
+      })
+      .catch((error) => {
+        console.log("Registration failed with " + error);
+      });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (navigator.serviceWorker) {
-    window.addEventListener("load", async () => {
-      try {
-        if (navigator.serviceWorker) {
-          await navigator.serviceWorker.register("/service-worker.js");
-          console.log("sw registered");
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    });
-  }
   new Newsletter(
     document.documentElement.children[1],
     "https://hw-ahj-workers-3-backend.onrender.com",
