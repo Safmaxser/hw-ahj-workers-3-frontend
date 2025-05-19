@@ -1,0 +1,132 @@
+.newsletter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;    
+    width: 500px;
+    background-color: #bedeea;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+    border-radius: 20px;    
+}
+
+.newsletter__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;
+    padding: 20px 20px 60px;
+    width: 100%;    
+}
+
+.newsletter__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;    
+}
+
+.newsletter__title {
+    margin: 5px 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.newsletter__btn-update {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.newsletter__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.newsletter__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter__created {
+    height: 20px;
+    width: 35%;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.newsletter__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.newsletter__img-block {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.newsletter__img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.newsletter__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.newsletter__str {
+    height: 20px;
+    width: 100%;
+}
+
+.sample {
+    background: linear-gradient(-45deg, #00000067, #000000ac, #00000067, #000000ac);
+    background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+.newsletter__notice {
+    position: absolute;
+    align-self: center;
+    font-size: 30px;    
+    text-align: center;    
+}
+
+.transparent {
+    opacity: 0.1;
+}
+
+.hidden {
+    display: none;
+}
+
+.wait {
+    cursor: wait;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
