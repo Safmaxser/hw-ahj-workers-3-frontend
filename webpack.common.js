@@ -51,6 +51,17 @@ module.exports = {
       cleanupOutdatedCaches: true,
       runtimeCaching: [
         {
+          urlPattern: ({ request }) => request.destination === "image",
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "images",
+            expiration: {
+              maxEntries: 60,
+              maxAgeSeconds: 30 * 24 * 60 * 60,
+            },
+          },
+        },
+        {
           urlPattern: new RegExp(".+/news"),
           handler: "NetworkFirst",
           options: {
